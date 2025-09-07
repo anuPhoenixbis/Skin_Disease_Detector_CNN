@@ -1,0 +1,35 @@
+# Core Streamlit and Web Framework
+streamlit==1.49.1
+
+# Machine Learning and AI
+tensorflow-cpu==2.19.0
+numpy==1.26.4
+scikit-learn==1.5.0
+
+# Image Processing
+Pillow==11.0.0
+opencv-python-headless==4.8.1.78
+
+# Data Handling
+pandas==2.1.4
+h5py==3.10.0
+
+# Visualization
+plotly==5.17.0
+matplotlib==3.9.2
+
+# Google AI Integration
+google-generativeai==0.8.3
+
+# HTTP Requests
+requests==2.31.0
+
+# Additional ML Tools
+scikeras==0.13.0
+
+# Optional: For better performance on CPU
+# tensorflow-intel==2.19.0  # Uncomment if using Intel CPU optimizations
+
+# Development and Testing (optional)
+# pytest==7.4.0
+# pytest-streamlit==0.2.0

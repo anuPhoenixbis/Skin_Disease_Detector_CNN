@@ -1,0 +1,235 @@
+/* Advanced Styles for Skin Disease Detection App */
+/* Save this as: static/style.css and reference it in your Streamlit app */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --danger-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.15);
+  
+  --radius-small: 10px;
+  --radius-medium: 15px;
+  --radius-large: 20px;
+  
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Animated Background */
+body {
+  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass Morphism Effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Advanced Button Animations */
+.enhanced-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enhanced-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.enhanced-button:hover::before {
+  left: 100%;
+}
+
+/* Floating Animation for Cards */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Advanced Loading Spinner */
+.medical-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(102, 126, 234, 0.1);
+  border-left: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pulse Animation for Severe Cases */
+.severity-alert {
+  animation: severePulse 2s infinite;
+}
+
+@keyframes severePulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 107, 107, 0);
+    transform: scale(1.05);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    transform: scale(1);
+  }
+}
+
+/* Interactive Hover Effects */
+.interactive-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Progress Bar Enhancements */
+.enhanced-progress {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(102, 126, 234, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.enhanced-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: 4px;
+  animation: progressGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes progressGlow {
+  0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+  100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8); }
+}
+
+/* Medical Icons Animation */
+.medical-icon {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.medical-icon:hover {
+  transform: rotate(360deg) scale(1.2);
+  color: #667eea;
+}
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+  .floating-card {
+    animation: none; /* Disable animations on mobile for performance */
+  }
+  
+  .interactive-card:hover {
+    transform: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Accessibility Enhancements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Indicators */
+*:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-gradient);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+  }
+  
+  .glass-card,
+  .medical-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+  
+  .enhanced-button,
+  .interactive-card {
+    display: none !important;
+  }
+}
