@@ -1,28 +1,36 @@
-# Core Streamlit and Web Framework
-streamlit==1.49.1
+# # Core Streamlit and Web Framework
+# streamlit==1.49.1
 
-# Machine Learning and AI
+# # Machine Learning and AI
+# tensorflow-cpu==2.20.0
+# numpy==1.26.4
+# scikit-learn==1.5.2
+
+# # Image Processing
+# Pillow==11.0.0
+# opencv-python-headless==4.10.0.84
+
+# # Data Handling
+# pandas==2.2.3
+# h5py==3.11.0
+
+# # Visualization
+# plotly==5.24.1
+# matplotlib==3.9.2
+
+# # Google AI Integration
+# google-generativeai==0.8.3
+
+# # HTTP Requests
+# requests==2.32.3
+
+# # Additional ML Tools
+# scikeras==0.13.0
+
+
 tensorflow-cpu==2.20.0
-numpy==1.26.4
-scikit-learn==1.5.2
-
-# Image Processing
-Pillow==11.0.0
-opencv-python-headless==4.10.0.84
-
-# Data Handling
-pandas==2.2.3
-h5py==3.11.0
-
-# Visualization
-plotly==5.24.1
-matplotlib==3.9.2
-
-# Google AI Integration
-google-generativeai==0.8.3
-
-# HTTP Requests
-requests==2.32.3
-
-# Additional ML Tools
-scikeras==0.13.0
+h5py>=3.11.0
+numpy<2.0
+scikit-learn==1.5.0
+pillow
+streamlit==1.49.1
