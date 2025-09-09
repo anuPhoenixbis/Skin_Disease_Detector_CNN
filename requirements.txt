@@ -28,7 +28,7 @@ requests==2.31.0
 scikeras==0.13.0
 
 # Optional: For better performance on CPU
-# tensorflow-intel==2.19.0  # Uncomment if using Intel CPU optimizations
+tensorflow-intel==2.20.0  # Uncomment if using Intel CPU optimizations
 
 # Development and Testing (optional)
 # pytest==7.4.0

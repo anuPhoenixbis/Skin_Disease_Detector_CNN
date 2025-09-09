@@ -1,0 +1,30 @@
+# Streamlit secrets (NEVER commit these)
+.streamlit/secrets.toml
+.streamlit/
+secrets.toml
+
+# Environment files
+.env
+*.env
+
+# API keys and config
+config.ini
+api_keys.txt
+
+# Model files (too large for GitHub)
+*.h5
+*.pkl
+models/best_model.h5
+models/best_model.pkl
+models/classes.json
+
+# Cache and temp files
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
