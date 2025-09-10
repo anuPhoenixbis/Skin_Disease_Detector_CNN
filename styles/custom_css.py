@@ -290,3 +290,125 @@ def inject_custom_css():
     
     </style>
     """, unsafe_allow_html=True)
+
+
+def inject_light_theme_css():
+    st.markdown("""
+    <style>
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* Global Styles */
+    body {
+        color: #212529;
+    }
+    .main {
+        padding-top: 2rem;
+        background-color: #f0f2f6; /* Light background for the main area */
+    }
+
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Header Styling */
+    .main-header {
+        text-align: center;
+        padding: 2rem 0;
+        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .main-header h1 {
+        color: #3730a3;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .main-header p {
+        color: #4f46e5;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    /* Card Styling */
+    .medical-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 1.5rem 0;
+        color: #212529;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e5e7eb;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .medical-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button Styling */
+    .stButton > button {
+        background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 0.75rem 2rem;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        width: 100%;
+    }
+
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+        background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+    }
+
+    /* Prediction Results */
+    .prediction-result {
+        background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 100%);
+        color: #1e1b4b;
+        padding: 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    /* Sidebar Styling */
+    .css-1d391kg {
+        background: #f8fafc; /* Light grey sidebar */
+    }
+
+    .css-1d391kg .css-1v0mbdj {
+        color: #334155; /* Dark text for sidebar */
+    }
+    .stats-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+    }
+    .stats-card h4 {
+        color: #4f46e5;
+    }
+    .stats-card p {
+        color: #64748b;
+    }
+
+    /* Success/Error Messages */
+    .stSuccess, .stError, .stWarning {
+        color: #212529; /* Dark text for better readability */
+    }
+
+    /* Hide Streamlit Elements */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    .stDeployButton {display:none;}
+
+    </style>
+    """, unsafe_allow_html=True)

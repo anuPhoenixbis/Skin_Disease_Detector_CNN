@@ -18,6 +18,9 @@ def create_header():
 def create_stats_sidebar():
     """Create sidebar with stats and information"""
     with st.sidebar:
+        st.markdown("### 🎨 Theme")
+        theme = st.selectbox("Choose a theme", ["Dark", "Light"], key="theme_selector")
+
         st.markdown("### 📊 Application Statistics")
         
         col1, col2 = st.columns(2)
