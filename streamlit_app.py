@@ -8,7 +8,7 @@ from pathlib import Path
 
 # Import our custom modules
 from config.settings import *
-from styles.custom_css import inject_custom_css
+from styles.custom_css import inject_custom_css, inject_light_theme_css
 from utils.model_utils import load_model, load_class_names, predict_image
 from utils.image_utils import validate_uploaded_file, preprocess_image_bytes
 from utils.ui_components import create_header, create_stats_sidebar, create_results_display
@@ -23,17 +23,24 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Inject custom CSS
-    inject_custom_css()
-    
+    # Initialize theme in session state
+    if 'theme_selector' not in st.session_state:
+        st.session_state.theme_selector = 'Dark'
+
+    # Inject CSS based on theme
+    if st.session_state.theme_selector == 'Light':
+        inject_light_theme_css()
+    else:
+        inject_custom_css()
+
     # Create header
     create_header()
     
-    # Initialize session state
+    # Initialize other session state
     if 'prediction_history' not in st.session_state:
         st.session_state.prediction_history = []
     
-    # Create sidebar with stats
+    # Create sidebar with stats (which includes the theme selector)
     create_stats_sidebar()
     
     # Load model and classes
